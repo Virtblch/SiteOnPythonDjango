@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'static/css/main.css'%}" type="text/css">
+    <title>Заметки пограмиста</title>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="sitename">
+            <p><a href="/">Site name</a></p>
+        </div>
+        <div id="linksocial">
+            <p><a href="http://vk.com/linuxbash">VK</a></p>
+        </div>
+    </div>
+    <div id="menu">
+        <dl>
+        {% for menu in menus %}
+            {% autoescape off %}
+                {{menu}}
+            {% endautoescape %}
+        {% endfor %}
+        </dl>
+    </div>
