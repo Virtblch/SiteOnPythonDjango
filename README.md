@@ -1,5 +1,8 @@
 # SiteOnPythonDjango
-Site on python framework Django
+Site on python framework Django.
+
+Login: admin
+Pass: admin
 
 ![Alt text](screenshot/site_1.png?raw=true "Site_1")
 
