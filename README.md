@@ -1,5 +1,5 @@
 # SiteOnPythonDjango
-Site on python framework Django for blog with
+Simple blank site for blog on python framework Django with
 - administration panel;
 - two level menu;
 - upload files.
@@ -9,7 +9,6 @@ Site on python framework Django for blog with
 ![Alt text](screenshot/site_2.png?raw=true "Site_2")
 
 Administration panel:
-
 Login: admin
 Pass: admin
 
