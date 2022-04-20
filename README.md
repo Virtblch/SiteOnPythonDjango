@@ -18,6 +18,6 @@ Pass: admin
 
 Url's format siteName/subCategName/url.html<br>
   where:<br>
-  subCategName : string<br>
+  subCategName (subcategory): string<br>
   url (post) : int - string<br>
 Example: http://mysite.com/notes/1-mypost.html
