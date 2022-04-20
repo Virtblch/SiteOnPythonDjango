@@ -20,7 +20,7 @@ Url's format siteName/subCategName/url.html<br>
   where:<br>
   subCategName (subcategory): string<br>
   url (post) : int - string<br>
-Example: http://mysite.com/notes/1-mypost.html
+Example: "http://mysite.com/notes/1-mypost.html"
 
 
 Modify python files:<br>
