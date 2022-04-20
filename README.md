@@ -1,5 +1,5 @@
 # SiteOnPythonDjango
-Simple blank site for blog on python framework Django with
+Simple blank site for blog on python framework Django with:
 - administration panel;
 - two level menu;
 - upload files.
