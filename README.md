@@ -16,8 +16,7 @@ Pass: admin
 
 ![Alt text](screenshot/site_4.png?raw=true "Site_4")
 
-Url's format siteName/subCategName/url.html
-
+Url's format siteName/subCategName/url.html<br>
   where:
   
   subCategName : string
