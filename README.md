@@ -8,8 +8,8 @@ Simple blank site for blog on python framework Django with:
 
 ![Alt text](screenshot/site_2.png?raw=true "Site_2")
 
-Administration panel:
-Login: admin
+Administration panel:<br>
+Login: admin<br>
 Pass: admin
 
 ![Alt text](screenshot/site_3.png?raw=true "Site_3")
