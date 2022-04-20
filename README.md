@@ -40,4 +40,4 @@ CSS files:<br>
 
 
 Uploaded files from administration panel:<br>
-/blog/static/files/blog/<br>
+/blog/static/files/blog/*<br>
