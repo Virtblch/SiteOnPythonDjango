@@ -20,8 +20,8 @@ Url's format siteName/subCategName/url.html
 
   where:
   
-  subcategory_name  : <string>
+  subcategory_name  : string
   
-  url (post)        : <int>-<string>
+  url (post)        : int-string
   
 Example: http://mysite.com/notes/1-mypost.html
