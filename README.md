@@ -17,10 +17,7 @@ Pass: admin
 ![Alt text](screenshot/site_4.png?raw=true "Site_4")
 
 Url's format siteName/subCategName/url.html<br>
-  where:
-  
-  subCategName : string
-  
-  url (post) : int-string
-  
+  where:<br>
+  subCategName : string<br>
+  url (post) : int-string<br>
 Example: http://mysite.com/notes/1-mypost.html
