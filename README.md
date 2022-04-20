@@ -16,8 +16,12 @@ Pass: admin
 
 ![Alt text](screenshot/site_4.png?raw=true "Site_4")
 
-Url's format siteName/subCategName/url.html 
+Url's format siteName/subCategName/url.html
+
   where:
+  
   subcategory_name  : <string>
+  
   url (post)        : <int>-<string>
+  
 Example: http://mysite.com/notes/1-mypost.html
