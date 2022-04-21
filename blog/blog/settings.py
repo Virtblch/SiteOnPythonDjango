@@ -22,9 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&=$tc7)!d#lh772(eeql0*kq35w8(8tdaf8e_9w&b7q$^dgc3x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# После публикации и изменения Debug на False : выполнить  .\manage.py collectstatic
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'linux-bash.ru']
 
 # Application definition
 
@@ -112,13 +113,15 @@ USE_TZ = True
 
 # здесь лежит main.css
 STATIC_URL = 'static/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+else:
+    STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 
 # Каталог загружаемых из админки файлов
-MEDIA_URL = 'static/files/'
+MEDIA_URL = '/static/files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/files')
 
 # Default primary key field type
