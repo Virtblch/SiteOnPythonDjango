@@ -9,12 +9,12 @@ def menu(url):
     menu = [];
     try:
         for categ in Category.objects.all():
-            menu.append('<dt>' + categ.categHumanName + '</dt>')
+            menu.append('<div class="category">' + categ.categHumanName + ':</div>')
             for subcateg in SubCategory.objects.filter(keyCateg=categ):
                 # Ссылка на главную страницу есть в шапке сайта, в меню не нужна
                 if subcateg.subCategName != 'main':
                     menu.append(
-                        '<dd><a href=' + url + '/' + subcateg.subCategName + '>' + subcateg.subCategHumanName + '</a></dd>')
+                        '<div class="subcategory"><a href=' + url + '/' + subcateg.subCategName + '>' + subcateg.subCategHumanName + '</a></div>')
         return menu
     except:
         raise Http404

@@ -3,6 +3,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+     <meta name="viewport" content="width=800">
     <link rel="stylesheet" href="{% static 'static/css/main.css'%}" type="text/css">
     <title>Заметки пограмиста</title>
 </head>
@@ -17,11 +18,9 @@
         </div>
     </div>
     <div id="menu">
-        <dl>
         {% for menu in menus %}
             {% autoescape off %}
                 {{menu}}
             {% endautoescape %}
         {% endfor %}
-        </dl>
     </div>
