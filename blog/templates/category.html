@@ -6,4 +6,15 @@
             {{post.description}}<br><br>
         {% endfor %}
     </div>
+    <div class="pagination">
+        {% if posts.has_previous %}
+            <a href="?page={{posts.previous_page_number}}"><< previous</a>
+        {% endif %}
+        {% if posts.paginator.num_pages > 1 %}
+            page {{posts.number}} of {{posts.paginator.num_pages}}
+        {% endif %}
+        {% if posts.has_next %}
+            <a href="?page={{posts.next_page_number}}">next >></a>
+        {% endif %}
+    </div>
 {% include 'footer.html'%}

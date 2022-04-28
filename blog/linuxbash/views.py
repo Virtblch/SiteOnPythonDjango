@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
-
+from django.core.paginator import Paginator
 from linuxbash.models import Post, SubCategory, Category
 
 
@@ -42,10 +42,19 @@ def category_page(requests, subCateg):
     try:
         # Фильтрация подкатегорий на основе url (в переменной subCateg часть url)
         sc = SubCategory.objects.filter(subCategName=subCateg)
+        # Посты подкатегории
+        posts = Post.objects.filter(keyCateg=sc[0])
+        # Пагинация с использованием класса django Paginator (разбивка по n-статей на страницу,
+        # в templates/category.html перемещение по страницам: '<< previous page 2 of 3 next >>')
+        # Число выводимых на страницу постов:
+        paginator = Paginator(posts, 7)
+        page_number = requests.GET.get('page')
+        page_obj = paginator.get_page(page_number)
         # Абсолютный путь к главной странице сайта (для формирования ссылок меню)
         absurl = requests.scheme + '://' + requests.META['HTTP_HOST']
         # Передача данных(меню, список статей) в html-шаблон (шаблоны в папке templates)
-        return render(requests, 'category.html', {'menus': menu(absurl), 'posts': Post.objects.filter(keyCateg=sc[0])})
+        return render(requests, 'category.html',
+                      {'menus': menu(absurl), 'posts': page_obj})
     except:
         raise Http404
 
