@@ -42,8 +42,9 @@ def category_page(requests, subCateg):
     try:
         # Фильтрация подкатегорий на основе url (в переменной subCateg часть url)
         sc = SubCategory.objects.filter(subCategName=subCateg)
+        #.all - .get_queryset().order_by('id')
         # Посты подкатегории
-        posts = Post.objects.filter(keyCateg=sc[0])
+        posts = Post.objects.get_queryset().order_by('id').filter(keyCateg=sc[0])
         # Пагинация с использованием класса django Paginator (разбивка по n-статей на страницу,
         # в templates/category.html перемещение по страницам: '<< previous page 2 of 3 next >>')
         # Число выводимых на страницу постов:
