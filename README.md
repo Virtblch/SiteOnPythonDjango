@@ -44,3 +44,5 @@ CSS files:<br>
 
 Uploaded files from administration panel:<br>
 /blog/static/files/blog/*<br>
+
+Instruction for site publication: https://linux-bash.ru/menusistem/121-public_python_django_site_on_debian.html
