@@ -3,7 +3,8 @@
         <br>
         {% for post in posts %}
             <b><a href={{post.url}}.html>{{post.title}}</a></b><br>
-            {{post.description}}<br><br>
+            {{post.description}}<br>
+            <i>{{post.datePost}}</i><br><br><!--Add date post to category pages-->
         {% endfor %}
     </div>
     <div class="pagination">

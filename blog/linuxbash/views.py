@@ -19,6 +19,19 @@ def menu(url):
     except:
         raise Http404
 
+# Функция отдает последние n-постов для модуля "Недавние публикации".
+def lastPosts(url):
+    lUrlPosts = ['<div class="title">Last posts:</div><br>'];
+    lposts = Post.objects.get_queryset().order_by('-id')[:5]
+    try:
+        for lpost in lposts:
+            if lpost.keyCateg.subCategName != 'main':
+                lUrlPosts.append(
+                    '<div class="lastposts"><a href=' + url + '/' + lpost.keyCateg.subCategName + '/' + lpost.url + '.html>' + lpost.title + '</a><br>' + lpost.description + '<br><div class="date_lastpost">' + str(lpost.datePost) + '</div><br></div>')
+        return lUrlPosts
+    except:
+        raise Http404
+
 
 # Формирование поста главной страницы сайта
 # Пост главной страницы должен иметь подкатегорию "main"
@@ -28,9 +41,9 @@ def index_page(requests):
         sc = SubCategory.objects.filter(subCategName='main')
         # Абсолютный путь к главной странице сайта (для формирования ссылок меню)
         absurl = requests.scheme + '://' + requests.META['HTTP_HOST']
-        # Передача данных(меню, статья) в html-шаблон (шаблоны в папке templates)
+        # Передача данных(меню, статья, список недавних публикаций) в html-шаблон (шаблоны в папке templates)
         return render(requests, 'post.html',
-                      {'menus': menu(absurl), 'posts': Post.objects.filter(keyCateg=sc[0])})
+                      {'menus': menu(absurl), 'posts': Post.objects.filter(keyCateg=sc[0]), 'lposts': lastPosts(absurl)})
     except:
         raise Http404
 

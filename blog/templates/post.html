@@ -5,7 +5,14 @@
         <div class="title">{{post.title}}</div><br><br>
             <!--safe-возможность использования тегов в посте, linebreaksbr заменяет /n на <br> -->
             {{post.post|safe|linebreaksbr}}<br><br>
-        <p class="date_post">{{post.datePost}}</p>
+            {% if post.keyCateg.subCategName != 'main' %}
+                <p class="date_post">{{post.datePost}}</p>
+            {% endif %}
+        {% endfor %}
+        {% for lpost in lposts %}
+            {% autoescape off %}
+                {{lpost}}
+            {% endautoescape %}
         {% endfor %}
     </div>
     <div class="pagination">

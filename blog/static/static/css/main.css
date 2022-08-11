@@ -174,3 +174,11 @@ a:active {
     height: auto;
     max-height:100%;
 }
+
+.lastposts a{
+    font-weight:bold;
+}
+
+.date_lastpost {
+    font-style:italic;
+}
