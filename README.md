@@ -2,11 +2,14 @@
 Simple blank site for blog on python framework Django with:
 - administration panel;
 - two level menu;
-- upload files.
+- upload files;
+- desktop\mobile view.
 
-![Alt text](screenshot/site_1.png?raw=true "Site_1")
+![Alt text](screenshot/screen_mobile.jpg?raw=true "Mobile")
 
-![Alt text](screenshot/site_2.png?raw=true "Site_2")
+![Alt text](screenshot/screen_1.jpg?raw=true "Site_1")
+
+![Alt text](screenshot/screen_2.jpg?raw=true "Site_2")
 
 Administration panel:<br>
 Login: admin<br>
@@ -21,7 +24,7 @@ Url's format siteName/subCategName/url.html<br>
   subCategName (subcategory): string<br>
   url (post) : int - string<br>
 Example: http://linux-bash.ru/mtext/35-pdf.html
-
+*This format url created for transfer articles from old site on joomla. You can change for yourself.
 
 Modify python files:<br>
 /blog/linuxbash/admin.py<br>
@@ -41,3 +44,5 @@ CSS files:<br>
 
 Uploaded files from administration panel:<br>
 /blog/static/files/blog/*<br>
+
+Instruction for site publication: https://linux-bash.ru/menusistem/121-public_python_django_site_on_debian.html
